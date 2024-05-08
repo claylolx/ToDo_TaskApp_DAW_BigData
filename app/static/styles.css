@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.title {
+    text-align: center;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+/* Style for todo items */
+.todo-list {
+    width: 70%;
+}
+
+.todo-link {
+    margin-left: 5px;
+    text-decoration: none;
+    color: blue;
+}
+
+.todo-link:hover {
+    text-decoration: underline;
+}
