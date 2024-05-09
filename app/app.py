@@ -6,7 +6,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///todo.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-# Definicion del modelo TodoItem
+# Definicion de una clase llamada TodoItem que hereda de db.Model, que es la clase base de SQLAlchemy para definir modelos de bases de datos.
 class TodoItem(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(200), nullable=False)
@@ -61,6 +61,6 @@ def uncomplete_todo(todo_id):
 
 # Crear base de datos y ejecutar aplicación
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
-    app.run(debug=True)
+    with app.app_context(): # Contexto de flask para iniciar la base de datos
+        db.create_all()     # Crea las tablas definidas en el modelo SQLAlchemy
+    app.run(debug=True)     # Cada cambio se recarga sin necesidad de reiniciar el programa

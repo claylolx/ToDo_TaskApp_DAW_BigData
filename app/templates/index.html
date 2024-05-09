@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List</title>
+    <title>Lista de tareas</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <div class="container">
         <div class="todo-list">
-            <h1 class="title">Todo List</h1>
+            <h1 class="title">Lista de tareas</h1>
             <form action="/add" method="POST">
-                <input type="text" name="content" placeholder="Add new todo" required>
-                <button type="submit">Add</button>
+                <input type="text" name="content" placeholder="Añadir nueva tarea" required>
+                <button type="submit">Añadir</button>
             </form>
             <table>
                 <thead>
                     <tr>
-                        <th>Task</th>
-                        <th>Status</th>
-                        <th>Actions</th>
+                        <th>Tarea</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,19 +30,19 @@
                             </td>
                             <td>
                                 {% if todo_item.completed %}
-                                    Completed
+                                    Completado
                                 {% else %}
-                                    Incomplete
+                                    Incompletado
                                 {% endif %}
                             </td>
                             <td>
                                 {% if not todo_item.completed %}
-                                    <a class="todo-link" href="/complete/{{ todo_item.id }}">Complete</a>
+                                    <a class="todo-link" href="/complete/{{ todo_item.id }}">Completado</a>
                                 {% else %}
-                                    <a class="todo-link" href="/uncomplete/{{ todo_item.id }}">Uncomplete</a>
+                                    <a class="todo-link" href="/uncomplete/{{ todo_item.id }}">Incompletado</a>
                                 {% endif %}
-                                <a class="todo-link" href="/edit/{{ todo_item.id }}">Edit</a>
-                                <a class="todo-link" href="/delete/{{ todo_item.id }}">Delete</a>
+                                <a class="todo-link" href="/edit/{{ todo_item.id }}">Editar</a>
+                                <a class="todo-link" href="/delete/{{ todo_item.id }}">Borrar</a>
                             </td>
                         </tr>
                     {% endfor %}

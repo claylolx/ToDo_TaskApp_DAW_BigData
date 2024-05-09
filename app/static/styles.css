@@ -12,12 +12,14 @@ form {
 
 table {
     width: 100%;
-    border-collapse: collapse;
+    border: 1px solid;
+    border-color: black;
 }
 
 th, td {
     padding: 8px;
     text-align: left;
+    border: 1px solid;
 }
 
 th {
@@ -25,12 +27,13 @@ th {
 }
 
 .completed {
-    text-decoration: line-through;
+    background-color: green;
 }
 
 /* Style for todo items */
 .todo-list {
-    width: 70%;
+    width: 100%;
+    align-items: center;
 }
 
 .todo-link {
