@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///todo.db'
@@ -7,10 +8,11 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 # Definicion de una clase llamada TodoItem que hereda de db.Model, que es la clase base de SQLAlchemy para definir modelos de bases de datos.
-class TodoItem(db.Model):
+class TodoItem(db.Model): # Clase hecha con CHATGPT
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(200), nullable=False)
     completed = db.Column(db.Boolean, default=False)
+    created_at = db.Column(db.DateTime, default=datetime.now)
 
     def __repr__(self):
         return f'<TodoItem {self.id}>'
@@ -24,7 +26,7 @@ def index():
 @app.route('/add', methods=['POST'])
 def add_todo():
     content = request.form['content']
-    new_todo = TodoItem(content=content)
+    new_todo = TodoItem(content=content, created_at=datetime.now())
     db.session.add(new_todo)
     db.session.commit()
     return redirect(url_for('index'))
