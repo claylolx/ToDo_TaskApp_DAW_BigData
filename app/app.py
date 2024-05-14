@@ -23,6 +23,18 @@ def index():
     todo_items = TodoItem.query.all()
     return render_template('index.html', todo_items=todo_items)
 
+@app.route('/tasks')
+def tasks():
+    todo_items = TodoItem.query.all()
+    return render_template('tasks.html', todo_items=todo_items)
+
+@app.route('/about')
+def about():
+    todo_items = TodoItem.query.all()
+    return render_template('about.html', todo_items=todo_items)
+
+
+
 @app.route('/add', methods=['POST'])
 def add_todo():
     content = request.form['content']

@@ -1,47 +1,138 @@
-body {
-    font-family: Arial, sans-serif;
+/* Estilos de la barra de navegación */
+.navbar {
+    background-color: #ED6A5A;
+    color: #fff;
+    padding: 15px 0;
 }
 
-.title {
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #9BC1BC;
+}
+
+input[type="text"] {
+    font-size: 15px;
+    position: flex;
+    left: 50%;
+    right: 50%;
+    padding: 15px;
     text-align: center;
 }
 
-form {
-    margin-bottom: 20px;
+input[type="text"]::-webkit-input-placeholder{
+    color: #9b9120;
 }
 
+input[type="text"]:-moz-placeholder {
+    color: #9b9120;
+    opacity: 1;
+}
+
+input[type="text"]::-moz-placeholder{
+    color: #ffea00;
+    opacity: 1;
+}
+
+input[type="text"]:-ms-input-placeholder{
+    color: #9b9120;
+}
+
+input[type="text"]::-ms-input-placeholder{
+    color: #9b9120;
+}
+
+input[type="text"]::placeholder{
+    color: #9b9120;
+}
+
+.logo {
+    margin: 0;
+}
+
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Estilos de la sección de héroe */
+.hero {
+    background-color: #F4F1BB;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.hero-title {
+    margin-top: 0;
+}
+
+.hero-text {
+    margin-bottom: 30px;
+}
+
+.search {
+    margin-top: 20px;
+}
+
+/* Estilos generales */
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.section-title {
+    margin-top: 50px;
+}
+
+/* Estilos de la tabla */
 table {
     width: 100%;
-    border: 1px solid;
-    border-color: black;
+    border-collapse: collapse;
 }
 
 th, td {
-    padding: 8px;
+    padding: 12px 15px;
     text-align: left;
-    border: 1px solid;
+    border-bottom: 2px solid #ddd;
+    border-right: 2px solid #ddd;
+    border-left: 2px solid #ddd;
 }
 
 th {
     background-color: #f2f2f2;
+    color: #000;
 }
 
 .completed {
-    background-color: green;
-}
-
-/* Style for todo items */
-.todo-list {
-    width: 100%;
-    align-items: center;
+    background-color: #4caf50;
+    color: #fff;
 }
 
 .todo-link {
     margin-left: 5px;
     text-decoration: none;
-    color: blue;
+    color: #523A34;
+    transition: color 0.3s ease;
+    font-weight: bold;
 }
 
 .todo-link:hover {
-    text-decoration: underline;
+    color: #EEC170;
 }

@@ -4,13 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Tarea</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='edit.css') }}">
 </head>
 <body>
-    <h1>Editar Tarea</h1>
-    <form action="" method="POST">
-        <input type="text" name="content" value="{{ todo.content }}" required>
-        <button type="submit">Guardar</button>
-    </form>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">TaskPlanner</h1>
+            <ul class="nav-links">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/tasks">Tareas</a></li>
+                <li><a href="/about">Acerca de</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="editar">
+        <h1>Editar Tarea</h1>
+        <form action="" method="POST">
+            <input type="text" name="content" value="{{ todo.content }}" required>
+        </form>
+    </div>
 </body>
 </html>

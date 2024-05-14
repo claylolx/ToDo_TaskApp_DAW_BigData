@@ -3,24 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de tareas</title>
+    <title>Lista de Tareas</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">TaskPlanner</h1>
+            <ul class="nav-links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="/tasks">Tareas</a></li>
+                <li><a href="/about">Acerca de</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container"> 
+            <h1 class="hero-title">Bienvenido a la Lista de Tareas</h1>
+            <p class="hero-text">Simplifique su vida con TaskPlanner: cree, realice un seguimiento y complete tareas con solo unos pocos clics.</p>
+            <div class="search">
+                <form action="/add" method="POST">
+                    <input type="text" name="content" placeholder="Añadir nueva tarea" required>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <div class="container">
         <div class="todo-list">
-            <h1 class="title">Lista de tareas</h1>
-            <form action="/add" method="POST">
-                <input type="text" name="content" placeholder="Añadir nueva tarea" required>
-                <button type="submit">Añadir</button>
-            </form>
+            <h2 class="section-title">Lista de Tareas</h2>
             <table>
                 <thead>
                     <tr>
                         <th>Tarea</th>
                         <th>Estado</th>
                         <th>Acciones</th>
-                        <th>Fecha creacion</th>
+                        <th>Fecha de Creación</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -51,5 +70,6 @@
                 </tbody>
             </table>
         </div>
+    </div>
 </body>
 </html>

@@ -1,0 +1,94 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #9BC1BC;
+}
+
+.editar {
+    text-align: center;
+    align-items: center;
+    margin-top: 150px;
+}
+
+.navbar {
+    background-color: #ED6A5A;
+    color: #fff;
+    padding: 15px 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input[type="text"] {
+    font-size: 15px;
+    position: flex;
+    left: 50%;
+    right: 50%;
+    padding: 15px;
+    text-align: center;
+}
+
+input[type="text"]::-webkit-input-placeholder{
+    color: #9b9120;
+}
+
+input[type="text"]:-moz-placeholder {
+    color: #9b9120;
+    opacity: 1;
+}
+
+input[type="text"]::-moz-placeholder{
+    color: #ffea00;
+    opacity: 1;
+}
+
+input[type="text"]:-ms-input-placeholder{
+    color: #9b9120;
+}
+
+input[type="text"]::-ms-input-placeholder{
+    color: #9b9120;
+}
+
+input[type="text"]::placeholder{
+    color: #9b9120;
+}
+
+.logo {
+    margin: 0;
+}
+
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.search {
+    margin-top: 20px;
+}
+
+/* Estilos generales */
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.editar {
+    text-align: center;
+    align-items: center;
+    
+}

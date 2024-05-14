@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">TaskPlanner</h1>
+            <ul class="nav-links">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/tasks">Tareas</a></li>
+                <li><a href="/about">Acerca de</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="about-section">
+        <div class="container">
+            <div class="about-item">
+                <img src="{{ url_for('static', filename='IMG_9164.jpg') }}" alt="Descripción de la imagen 1">
+                <p>Realizador del Front End</p>
+            </div>
+            <div class="about-item2">
+                <img src="{{ url_for('static', filename='sergi.jpg') }}" alt="Descripción de la imagen 2">
+                <p>Realizador del Back End</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

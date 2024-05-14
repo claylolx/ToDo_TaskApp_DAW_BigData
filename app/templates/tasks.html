@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">TaskPlanner</h1>
+            <ul class="nav-links">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/tasks">Tareas</a></li>
+                <li><a href="/about">Acerca de</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="todo-list">
+            <h2 class="section-title">Lista de Tareas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tarea</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                        <th>Fecha de Creación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for todo_item in todo_items %}
+                        <tr>
+                            <td{% if todo_item.completed %} class="completed"{% endif %}>
+                                {{ todo_item.content }}
+                            </td>
+                            <td>
+                                {% if todo_item.completed %}
+                                    Completado
+                                {% else %}
+                                    Incompletado
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if not todo_item.completed %}
+                                    <a class="todo-link" href="/complete/{{ todo_item.id }}">Completado</a>
+                                {% else %}
+                                    <a class="todo-link" href="/uncomplete/{{ todo_item.id }}">Incompletado</a>
+                                {% endif %}
+                                <a class="todo-link" href="/edit/{{ todo_item.id }}">Editar</a>
+                                <a class="todo-link" href="/delete/{{ todo_item.id }}">Borrar</a>
+                            </td>
+                            <td>{{ todo_item.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
